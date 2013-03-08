@@ -6,6 +6,20 @@
 
 	<display-name>TEIID_JPA_Example</display-name>
 
+
+    <context-param>
+        <param-name>resteasy.scan</param-name>
+        <param-value>false</param-value>
+    </context-param>
+    <context-param>
+        <param-name>resteasy.scan.providers</param-name>
+        <param-value>false</param-value>
+    </context-param>
+    <context-param>
+        <param-name>resteasy.scan.resources</param-name>
+        <param-value>false</param-value>
+    </context-param>
+
 	<!-- Servlet 1: Expose the OData service endpoint -->
 	<servlet>
 		<servlet-name>OData</servlet-name>

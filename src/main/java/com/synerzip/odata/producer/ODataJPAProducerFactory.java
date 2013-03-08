@@ -1,13 +1,10 @@
 package com.synerzip.odata.producer;
 
-import java.util.Properties;
-
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
 import org.odata4j.producer.ODataProducer;
 import org.odata4j.producer.ODataProducerFactory;
-import org.odata4j.producer.jpa.JPAProducer;
+import org.odata4j.producer.inmemory.InMemoryProducer;
+
+import java.util.Properties;
 
 public class ODataJPAProducerFactory implements ODataProducerFactory {
 
@@ -17,10 +14,16 @@ public class ODataJPAProducerFactory implements ODataProducerFactory {
 
 	@Override
 	public ODataProducer create(Properties arg0) {
-		EntityManagerFactory emf = Persistence
-				.createEntityManagerFactory(persistenceUnitName);
+//		EntityManagerFactory emf = Persistence
+//				.createEntityManagerFactory(persistenceUnitName);
 
-		JPAProducer producer = new JPAProducer(emf, namespace, maxResults);
+//		JPAProducer producer = new JPAProducer(emf, namespace, maxResults);
+
+      InMemoryProducer producer = new InMemoryProducer("odata");
+
+
+      // zjistit jak ho nakrmit
+
 
 		return producer;
 	}
