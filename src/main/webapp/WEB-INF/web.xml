@@ -6,7 +6,6 @@
 
 	<display-name>TEIID_JPA_Example</display-name>
 
-
     <context-param>
         <param-name>resteasy.scan</param-name>
         <param-value>false</param-value>
